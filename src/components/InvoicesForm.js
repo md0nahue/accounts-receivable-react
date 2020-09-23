@@ -5,9 +5,9 @@ import { addInvoice } from "../actions";
 
 function mapDispatchToProps(dispatch) {
   return {
-    addInvoice: invoice => {
+    addInvoice: (invoice) => {
       dispatch(addInvoice(invoice));
-    }
+    },
   };
 }
 
@@ -15,7 +15,7 @@ function InvoicesForm({ addInvoice }) {
   let [client, setClient] = useState("");
   let [poNumber, setPoNumber] = useState("");
 
-  const onSubmitHandler = e => {
+  const onSubmitHandler = (e) => {
     e.preventDefault();
     addInvoice({ client, poNumber });
   };
@@ -24,7 +24,12 @@ function InvoicesForm({ addInvoice }) {
     <form onSubmit={onSubmitHandler}>
       <div className="form-group">
         <label>Client: </label>
-        <select name="client" value={client} onChange={e => setClient(e.target.value)} class="form-control">
+        <select
+          name="client"
+          value={client}
+          onChange={(e) => setClient(e.target.value)}
+          class="form-control"
+        >
           <option value="CircleCi">CircleCi</option>
           <option value="New Relic">New Relic</option>
         </select>
@@ -35,19 +40,18 @@ function InvoicesForm({ addInvoice }) {
           type="text"
           name="ponumber"
           value={poNumber}
-          onChange={e => setPoNumber(e.target.value)}
+          onChange={(e) => setPoNumber(e.target.value)}
         />
       </div>
-      <button type="submit" className="btn btn-primary">Save</button>
+      <button type="submit" className="btn btn-primary">
+        Save
+      </button>
     </form>
   );
 }
 
 InvoicesForm.propTypes = {
-  addInvoice: PropTypes.func.isRequired
+  addInvoice: PropTypes.func.isRequired,
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(InvoicesForm);
+export default connect(null, mapDispatchToProps)(InvoicesForm);

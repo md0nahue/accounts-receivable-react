@@ -16,7 +16,7 @@ describe("InvoiceList Component", () => {
     let invoices = [
       { id: 1, client: "Test Double 1" },
       { id: 2, client: "Test Double 2" },
-      { id: 3, client: "Test Double 3" }
+      { id: 3, client: "Test Double 3" },
     ];
     let store = mockStore({ invoices });
 

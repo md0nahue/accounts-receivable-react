@@ -2,19 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    invoices: state.invoices
+    invoices: state.invoices,
   };
 };
 
 function InvoiceList(props) {
   return (
     <ul className="InvoiceList nav nav-pills flex-column">
-      {props.invoices.map(invoice => {
+      {props.invoices.map((invoice) => {
         return (
           <li className="nav-item" key={invoice.id}>
-            <NavLink to={`/invoices/${invoice.id}`} className="nav-link">{invoice.client}</NavLink>
+            <NavLink to={`/invoices/${invoice.id}`} className="nav-link">
+              {invoice.client}
+            </NavLink>
           </li>
         );
       })}
@@ -22,6 +24,4 @@ function InvoiceList(props) {
   );
 }
 
-export default connect(
-  mapStateToProps
-)(InvoiceList);
+export default connect(mapStateToProps)(InvoiceList);

@@ -4,7 +4,7 @@ import InvoiceSection from "./InvoiceSection";
 
 const mapStateToProps = (state, { match }) => {
   return {
-    invoice: state.invoices.find(invoice => invoice.id === match.params.id)
+    invoice: state.invoices.find((invoice) => invoice.id === match.params.id),
   };
 };
 
