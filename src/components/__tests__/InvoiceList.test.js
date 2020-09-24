@@ -15,9 +15,9 @@ beforeEach(cleanup);
 describe("InvoiceList Component", () => {
   it("Renders a list of provided invoices", () => {
     const invoices = [
-      { id: 1, client: "Test Double 1" },
-      { id: 2, client: "Test Double 2" },
-      { id: 3, client: "Test Double 3" },
+      { id: "1", client: "Test Double 1" },
+      { id: "2", client: "Test Double 2" },
+      { id: "3", client: "Test Double 3" },
     ];
     const store = mockStore({ invoices });
 

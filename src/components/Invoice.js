@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import InvoiceSection from "./InvoiceSection";
 
@@ -38,10 +39,32 @@ function Invoice({ invoice }) {
   );
 }
 
-const mapStateToProps = (state, { match }) => {
-  return {
-    invoice: state.invoices.find((invoice) => invoice.id === match.params.id),
-  };
+const BillablePropType = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  discount_percent: PropTypes.number,
+  price_cents: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
+});
+
+Invoice.propTypes = {
+  invoice: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    client: PropTypes.string.isRequired,
+    attn: PropTypes.string.isRequired,
+    due_date: PropTypes.string.isRequired,
+    notes: PropTypes.string.isRequired,
+    projects: PropTypes.arrayOf(BillablePropType).isRequired,
+    services: PropTypes.arrayOf(BillablePropType).isRequired,
+  }),
 };
+
+function mapStateToProps(state, props) {
+  return {
+    invoice: state.invoices.find(
+      (invoice) => invoice.id === props.match.params.id
+    ),
+  };
+}
 
 export default connect(mapStateToProps)(Invoice);
