@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDom from "react-dom";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import { render, fireEvent, cleanup } from "@testing-library/react";
@@ -22,21 +21,18 @@ function renderWithStore(store) {
 
 describe("InvoicesForm Component", () => {
   it("Renders a form matching snapshot", () => {
-    let store = mockStore({});
-
-    let { container } = renderWithStore(store);
+    const store = mockStore({});
+    const { container } = renderWithStore(store);
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('Dispatches action on "save" click', () => {
-    let store = mockStore({});
-
-    let { container, getByText } = renderWithStore(store);
+    const store = mockStore({});
+    const { getByText } = renderWithStore(store);
 
     fireEvent.click(getByText("Save"));
-
-    let actions = store.getActions();
+    const actions = store.getActions();
 
     expect(actions.length).toEqual(1);
     expect(actions[0].type).toEqual("ADD_INVOICE");

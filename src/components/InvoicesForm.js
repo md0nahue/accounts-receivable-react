@@ -3,17 +3,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addInvoice } from "../actions";
 
-function mapDispatchToProps(dispatch) {
-  return {
-    addInvoice: (invoice) => {
-      dispatch(addInvoice(invoice));
-    },
-  };
-}
-
 function InvoicesForm({ addInvoice }) {
-  let [client, setClient] = useState("");
-  let [poNumber, setPoNumber] = useState("");
+  const [client, setClient] = useState("");
+  const [poNumber, setPoNumber] = useState("");
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -53,5 +45,13 @@ function InvoicesForm({ addInvoice }) {
 InvoicesForm.propTypes = {
   addInvoice: PropTypes.func.isRequired,
 };
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addInvoice: (invoice) => {
+      dispatch(addInvoice(invoice));
+    },
+  };
+}
 
 export default connect(null, mapDispatchToProps)(InvoicesForm);

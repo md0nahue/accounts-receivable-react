@@ -14,14 +14,14 @@ beforeEach(cleanup);
 
 describe("InvoiceList Component", () => {
   it("Renders a list of provided invoices", () => {
-    let invoices = [
+    const invoices = [
       { id: 1, client: "Test Double 1" },
       { id: 2, client: "Test Double 2" },
       { id: 3, client: "Test Double 3" },
     ];
-    let store = mockStore({ invoices });
+    const store = mockStore({ invoices });
 
-    let { container } = render(
+    const { container } = render(
       <Provider store={store}>
         <MemoryRouter>
           <InvoiceList />
@@ -29,7 +29,7 @@ describe("InvoiceList Component", () => {
       </Provider>
     );
 
-    let invoiceList = container.querySelector(".InvoiceList");
+    const invoiceList = container.querySelector(".InvoiceList");
     expect(invoiceList.children.length).toEqual(invoices.length);
     expect(container.firstChild).toMatchSnapshot();
   });
