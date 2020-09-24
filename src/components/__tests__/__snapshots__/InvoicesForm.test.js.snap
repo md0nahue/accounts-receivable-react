@@ -2,23 +2,44 @@
 
 exports[`InvoicesForm Component Renders a form matching snapshot 1`] = `
 <form>
-  <label>
-    Client:
-    <input
+  <div
+    class="form-group"
+  >
+    <label>
+      Client: 
+    </label>
+    <select
+      class="form-control"
       name="client"
-      type="text"
-      value=""
-    />
-  </label>
-  <label>
-    Purchase Order Number:
+    >
+      <option
+        value="CircleCi"
+      >
+        CircleCi
+      </option>
+      <option
+        value="New Relic"
+      >
+        New Relic
+      </option>
+    </select>
+  </div>
+  <div
+    class="form-group"
+  >
+    <label>
+      Purchase Order Number: 
+    </label>
     <input
       name="ponumber"
       type="text"
       value=""
     />
-  </label>
-  <button>
+  </div>
+  <button
+    class="btn btn-primary"
+    type="submit"
+  >
     Save
   </button>
 </form>

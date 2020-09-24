@@ -2,6 +2,7 @@ import React from "react";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import { render, cleanup } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import "jest-dom/extend-expect";
 
 import InvoiceList from "../InvoiceList";
@@ -22,7 +23,9 @@ describe("InvoiceList Component", () => {
 
     let { container } = render(
       <Provider store={store}>
-        <InvoiceList />
+        <MemoryRouter>
+          <InvoiceList />
+        </MemoryRouter>
       </Provider>
     );
 

@@ -28,7 +28,7 @@ function InvoicesForm({ addInvoice }) {
           name="client"
           value={client}
           onChange={(e) => setClient(e.target.value)}
-          class="form-control"
+          className="form-control"
         >
           <option value="CircleCi">CircleCi</option>
           <option value="New Relic">New Relic</option>

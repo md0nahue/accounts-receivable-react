@@ -2,16 +2,37 @@
 
 exports[`InvoiceList Component Renders a list of provided invoices 1`] = `
 <ul
-  class="InvoiceList"
+  class="InvoiceList nav nav-pills flex-column"
 >
-  <li>
-    Test Double 1
+  <li
+    class="nav-item"
+  >
+    <a
+      class="nav-link"
+      href="/invoices/1"
+    >
+      Test Double 1
+    </a>
   </li>
-  <li>
-    Test Double 2
+  <li
+    class="nav-item"
+  >
+    <a
+      class="nav-link"
+      href="/invoices/2"
+    >
+      Test Double 2
+    </a>
   </li>
-  <li>
-    Test Double 3
+  <li
+    class="nav-item"
+  >
+    <a
+      class="nav-link"
+      href="/invoices/3"
+    >
+      Test Double 3
+    </a>
   </li>
 </ul>
 `;
