@@ -1,17 +1,13 @@
 import React from "react";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import { render, cleanup } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-
 import InvoiceList from "../InvoiceList";
 
-const middlewares = [];
-const mockStore = configureStore(middlewares);
+const mockStore = configureStore();
 
-beforeEach(cleanup);
-
-describe("InvoiceList Component", () => {
+describe("InvoiceList", () => {
   it("Renders a list of provided invoices", () => {
     const invoices = [
       { id: "1", client: "Test Double 1" },

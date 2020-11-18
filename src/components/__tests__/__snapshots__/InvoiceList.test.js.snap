@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InvoiceList Component Renders a list of provided invoices 1`] = `
+exports[`InvoiceList Renders a list of provided invoices 1`] = `
 <ul
   class="InvoiceList nav nav-pills flex-column"
 >

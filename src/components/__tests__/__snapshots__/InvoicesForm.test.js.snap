@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InvoicesForm Component Renders a form matching snapshot 1`] = `
+exports[`InvoicesForm Renders a form matching snapshot 1`] = `
 <form>
   <div
     class="form-group"

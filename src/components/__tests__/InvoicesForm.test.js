@@ -1,14 +1,11 @@
 import React from "react";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import { render, fireEvent, cleanup } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 
 import InvoicesForm from "../InvoicesForm";
 
-const middlewares = [];
-const mockStore = configureStore(middlewares);
-
-beforeEach(cleanup);
+const mockStore = configureStore();
 
 function renderWithStore(store) {
   return render(
@@ -18,7 +15,7 @@ function renderWithStore(store) {
   );
 }
 
-describe("InvoicesForm Component", () => {
+describe("InvoicesForm", () => {
   it("Renders a form matching snapshot", () => {
     const store = mockStore({});
     const { container } = renderWithStore(store);
@@ -28,9 +25,9 @@ describe("InvoicesForm Component", () => {
 
   it('Dispatches action on "save" click', () => {
     const store = mockStore({});
-    const { getByText } = renderWithStore(store);
+    renderWithStore(store);
 
-    fireEvent.click(getByText("Save"));
+    fireEvent.click(screen.getByText("Save"));
     const actions = store.getActions();
 
     expect(actions.length).toEqual(1);
