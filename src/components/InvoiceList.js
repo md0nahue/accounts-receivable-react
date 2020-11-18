@@ -10,7 +10,7 @@ export function InvoiceList() {
       {invoices.map(invoice => (
         <li className="nav-item" key={invoice.id}>
           <NavLink to={`/invoices/${invoice.id}`} className="nav-link">
-            {invoice.client}
+            #{invoice.id} {invoice.client}
           </NavLink>
         </li>
       ))}
