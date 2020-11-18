@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addInvoice } from "../actions";
 
-function InvoicesForm({ addInvoice }) {
+export function InvoicesForm() {
   const [client, setClient] = useState("");
   const [poNumber, setPoNumber] = useState("");
+  const dispatch = useDispatch();
 
   const onSubmitHandler = e => {
     e.preventDefault();
-    addInvoice({ client, poNumber });
+    dispatch(addInvoice({ client, poNumber }));
   };
 
   return (
@@ -41,17 +42,3 @@ function InvoicesForm({ addInvoice }) {
     </form>
   );
 }
-
-InvoicesForm.propTypes = {
-  addInvoice: PropTypes.func.isRequired
-};
-
-function mapDispatchToProps(dispatch) {
-  return {
-    addInvoice: invoice => {
-      dispatch(addInvoice(invoice));
-    }
-  };
-}
-
-export default connect(null, mapDispatchToProps)(InvoicesForm);
