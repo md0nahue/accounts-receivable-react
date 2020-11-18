@@ -22,8 +22,9 @@ export function InvoicesForm() {
   return (
     <div className="container">
       <form onSubmit={onSubmitHandler}>
-        <FormGroup label="Client">
+        <FormGroup label="Client" htmlFor="client-input">
           <select
+            id="client-input"
             name="client"
             value={client}
             onChange={e => setClient(e.target.value)}
@@ -34,8 +35,9 @@ export function InvoicesForm() {
             <option value="New Relic">New Relic</option>
           </select>
         </FormGroup>
-        <FormGroup label="Attn">
+        <FormGroup label="Attn" htmlFor="attn-input">
           <input
+            id="attn-input"
             type="text"
             name="attn"
             value={attn}
@@ -43,8 +45,9 @@ export function InvoicesForm() {
             className="form-control"
           />
         </FormGroup>
-        <FormGroup label="Due Date">
+        <FormGroup label="Due Date" htmlFor="duedate-input">
           <input
+            input="duedate-input"
             type="text"
             name="duedate"
             value={dueDate}
@@ -52,8 +55,9 @@ export function InvoicesForm() {
             className="form-control"
           />
         </FormGroup>
-        <FormGroup label="Notes">
+        <FormGroup label="Notes" htmlFor="notes-input">
           <textarea
+            id="notes-input"
             name="notes"
             value={notes}
             onChange={e => setNotes(e.target.value)}
@@ -68,10 +72,12 @@ export function InvoicesForm() {
   );
 }
 
-function FormGroup({ label, children }) {
+function FormGroup({ label, htmlFor, children }) {
   return (
     <div className="form-group">
-      <label style={{ display: "block" }}>{label}</label>
+      <label style={{ display: "block" }} htmlFor={htmlFor}>
+        {label}
+      </label>
       {children}
     </div>
   );
