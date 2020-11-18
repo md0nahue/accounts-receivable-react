@@ -1,6 +1,7 @@
 import React from "react";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
+import { MemoryRouter } from "react-router-dom";
 import { render, fireEvent, screen } from "@testing-library/react";
 
 import { InvoicesForm } from "../InvoicesForm";
@@ -9,9 +10,11 @@ const mockStore = configureStore();
 
 function renderWithStore(store) {
   return render(
-    <Provider store={store}>
-      <InvoicesForm />
-    </Provider>
+    <MemoryRouter>
+      <Provider store={store}>
+        <InvoicesForm />
+      </Provider>
+    </MemoryRouter>
   );
 }
 
