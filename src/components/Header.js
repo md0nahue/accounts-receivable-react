@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header() {
+export function Header() {
   return (
     <header>
       <h1>Invoice Time</h1>
@@ -9,5 +9,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;
