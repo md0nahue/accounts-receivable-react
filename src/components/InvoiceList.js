@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 function InvoiceList({ invoices }) {
   return (
     <ul className="InvoiceList nav nav-pills flex-column">
-      {invoices.map((invoice) => (
+      {invoices.map(invoice => (
         <li className="nav-item" key={invoice.id}>
           <NavLink to={`/invoices/${invoice.id}`} className="nav-link">
             {invoice.client}
@@ -21,14 +21,14 @@ InvoiceList.propTypes = {
   invoices: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      client: PropTypes.string.isRequired,
+      client: PropTypes.string.isRequired
     })
-  ).isRequired,
+  ).isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    invoices: state.invoices,
+    invoices: state.invoices
   };
 }
 

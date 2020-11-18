@@ -7,7 +7,7 @@ function InvoicesForm({ addInvoice }) {
   const [client, setClient] = useState("");
   const [poNumber, setPoNumber] = useState("");
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = e => {
     e.preventDefault();
     addInvoice({ client, poNumber });
   };
@@ -19,7 +19,7 @@ function InvoicesForm({ addInvoice }) {
         <select
           name="client"
           value={client}
-          onChange={(e) => setClient(e.target.value)}
+          onChange={e => setClient(e.target.value)}
           className="form-control"
         >
           <option value="CircleCi">CircleCi</option>
@@ -32,7 +32,7 @@ function InvoicesForm({ addInvoice }) {
           type="text"
           name="ponumber"
           value={poNumber}
-          onChange={(e) => setPoNumber(e.target.value)}
+          onChange={e => setPoNumber(e.target.value)}
         />
       </div>
       <button type="submit" className="btn btn-primary">
@@ -43,14 +43,14 @@ function InvoicesForm({ addInvoice }) {
 }
 
 InvoicesForm.propTypes = {
-  addInvoice: PropTypes.func.isRequired,
+  addInvoice: PropTypes.func.isRequired
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    addInvoice: (invoice) => {
+    addInvoice: invoice => {
       dispatch(addInvoice(invoice));
-    },
+    }
   };
 }
 

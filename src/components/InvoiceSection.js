@@ -43,9 +43,9 @@ InvoiceSection.propTypes = {
       description: PropTypes.string.isRequired,
       discount_percent: PropTypes.number,
       price_cents: PropTypes.number.isRequired,
-      quantity: PropTypes.number.isRequired,
+      quantity: PropTypes.number.isRequired
     })
-  ),
+  )
 };
 
 export default InvoiceSection;

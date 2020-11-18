@@ -44,7 +44,7 @@ const BillablePropType = PropTypes.shape({
   description: PropTypes.string.isRequired,
   discount_percent: PropTypes.number,
   price_cents: PropTypes.number.isRequired,
-  quantity: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired
 });
 
 Invoice.propTypes = {
@@ -55,15 +55,15 @@ Invoice.propTypes = {
     due_date: PropTypes.string.isRequired,
     notes: PropTypes.string.isRequired,
     projects: PropTypes.arrayOf(BillablePropType).isRequired,
-    services: PropTypes.arrayOf(BillablePropType).isRequired,
-  }),
+    services: PropTypes.arrayOf(BillablePropType).isRequired
+  })
 };
 
 function mapStateToProps(state, props) {
   return {
     invoice: state.invoices.find(
-      (invoice) => invoice.id === props.match.params.id
-    ),
+      invoice => invoice.id === props.match.params.id
+    )
   };
 }
 
