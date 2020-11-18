@@ -7,7 +7,7 @@ import { Invoice } from "./Invoice";
 import { InvoicesForm } from "./InvoicesForm";
 import { InvoiceList } from "./InvoiceList";
 
-function App() {
+export function App() {
   return (
     <Router>
       <div className="App container">
@@ -23,5 +23,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
