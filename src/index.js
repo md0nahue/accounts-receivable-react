@@ -6,7 +6,7 @@ import "./index.css";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 import reducer from "./reducers";
-import { addInvoice } from "./actions/index";
+import { addInvoice } from "./actions";
 
 const store = createStore(
   reducer,
