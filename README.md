@@ -16,12 +16,24 @@ The following tools and libraries are used in the project:
 
 ## Project Todos
 
-Please complete the following tasks as explained in the linked issues:
+To be conscientious of your valuable time, please limit yourself to 3
+hours. This time limit does not need to be consecutive. We have no expectations
+of when you would be able to work on this project, so over the course of a
+weekend is just fine.
+
+Please perform your work as though you were delivering it to a paying client and
+deploying it into production. We care more about the quality of your solution
+than necessarily how far you get.
+
+Complete the following tasks as explained in their linked issues:
 
 1. Compute Invoice Discounts: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/2
 2. Add "Invoice Complete" radio button: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/4
 3. Incomplete Invoice count: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/5
 4. Change Invoice state: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/6
+
+NOTE: If you receive alternative instructions from a Test Double Agent for this
+project, then stick to what they said.
 
 ## Available Scripts
 

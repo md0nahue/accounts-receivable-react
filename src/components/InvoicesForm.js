@@ -11,7 +11,7 @@ export function InvoicesForm() {
   const [notes, setNotes] = useState("");
   const dispatch = useDispatch();
 
-  const onSubmitHandler = e => {
+  const onSubmitHandler = (e) => {
     e.preventDefault();
     if (client) {
       dispatch(addInvoice({ client, attn, notes, due_date: dueDate }));
@@ -27,7 +27,7 @@ export function InvoicesForm() {
             id="client-input"
             name="client"
             value={client}
-            onChange={e => setClient(e.target.value)}
+            onChange={(e) => setClient(e.target.value)}
             className="form-control"
           >
             <option value="">--</option>
@@ -41,7 +41,7 @@ export function InvoicesForm() {
             type="text"
             name="attn"
             value={attn}
-            onChange={e => setAttn(e.target.value)}
+            onChange={(e) => setAttn(e.target.value)}
             className="form-control"
           />
         </FormGroup>
@@ -51,7 +51,7 @@ export function InvoicesForm() {
             type="text"
             name="duedate"
             value={dueDate}
-            onChange={e => setDueDate(e.target.value)}
+            onChange={(e) => setDueDate(e.target.value)}
             className="form-control"
           />
         </FormGroup>
@@ -60,7 +60,7 @@ export function InvoicesForm() {
             id="notes-input"
             name="notes"
             value={notes}
-            onChange={e => setNotes(e.target.value)}
+            onChange={(e) => setNotes(e.target.value)}
             className="form-control"
           />
         </FormGroup>
@@ -75,9 +75,7 @@ export function InvoicesForm() {
 function FormGroup({ label, htmlFor, children }) {
   return (
     <div className="form-group">
-      <label style={{ display: "block" }} htmlFor={htmlFor}>
-        {label}
-      </label>
+      <label htmlFor={htmlFor}>{label}</label>
       {children}
     </div>
   );

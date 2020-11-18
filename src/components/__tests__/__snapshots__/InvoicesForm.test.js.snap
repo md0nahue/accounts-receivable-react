@@ -10,7 +10,6 @@ exports[`InvoicesForm Renders a form matching snapshot 1`] = `
     >
       <label
         for="client-input"
-        style="display: block;"
       >
         Client
       </label>
@@ -41,7 +40,6 @@ exports[`InvoicesForm Renders a form matching snapshot 1`] = `
     >
       <label
         for="attn-input"
-        style="display: block;"
       >
         Attn
       </label>
@@ -58,7 +56,6 @@ exports[`InvoicesForm Renders a form matching snapshot 1`] = `
     >
       <label
         for="duedate-input"
-        style="display: block;"
       >
         Due Date
       </label>
@@ -75,7 +72,6 @@ exports[`InvoicesForm Renders a form matching snapshot 1`] = `
     >
       <label
         for="notes-input"
-        style="display: block;"
       >
         Notes
       </label>
