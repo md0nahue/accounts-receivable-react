@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import InvoiceSection from "./InvoiceSection";
+import { InvoiceSection } from "./InvoiceSection";
 
 export function Invoice() {
   const { id } = useParams();

@@ -1,7 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-function InvoiceSection({ items, title }) {
+export function InvoiceSection({ items, title }) {
   if (!items) {
     return <p>This section is empty!</p>;
   }
@@ -34,18 +33,3 @@ function InvoiceSection({ items, title }) {
     </>
   );
 }
-
-InvoiceSection.propTypes = {
-  title: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      discount_percent: PropTypes.number,
-      price_cents: PropTypes.number.isRequired,
-      quantity: PropTypes.number.isRequired
-    })
-  )
-};
-
-export default InvoiceSection;
