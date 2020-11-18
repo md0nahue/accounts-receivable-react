@@ -2,7 +2,6 @@ import React from "react";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import { render, fireEvent, cleanup } from "@testing-library/react";
-import "jest-dom/extend-expect";
 
 import InvoicesForm from "../InvoicesForm";
 

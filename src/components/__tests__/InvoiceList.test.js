@@ -3,7 +3,6 @@ import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import { render, cleanup } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import "jest-dom/extend-expect";
 
 import InvoiceList from "../InvoiceList";
 
@@ -17,7 +16,7 @@ describe("InvoiceList Component", () => {
     const invoices = [
       { id: "1", client: "Test Double 1" },
       { id: "2", client: "Test Double 2" },
-      { id: "3", client: "Test Double 3" },
+      { id: "3", client: "Test Double 3" }
     ];
     const store = mockStore({ invoices });
 
