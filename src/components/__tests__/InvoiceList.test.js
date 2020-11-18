@@ -3,7 +3,7 @@ import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import InvoiceList from "../InvoiceList";
+import { InvoiceList } from "../InvoiceList";
 
 const mockStore = configureStore();
 

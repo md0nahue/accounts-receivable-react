@@ -3,7 +3,7 @@ import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import { render, fireEvent, screen } from "@testing-library/react";
 
-import InvoicesForm from "../InvoicesForm";
+import { InvoicesForm } from "../InvoicesForm";
 
 const mockStore = configureStore();
 
