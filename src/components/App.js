@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 import { Header } from "./Header";
@@ -16,8 +16,13 @@ export function App() {
           <InvoiceList />
         </div>
         <div className="main">
-          <Route path="/invoices/:id" component={Invoice} />
-          <Route path="/invoices/add" component={InvoicesForm} />
+          <Switch>
+            <Route path="/invoices/add" component={InvoicesForm} />
+            <Route path="/invoices/:id" component={Invoice} />
+            <Route exact path="/">
+              <h3>Select an invoice</h3>
+            </Route>
+          </Switch>
         </div>
       </div>
     </Router>

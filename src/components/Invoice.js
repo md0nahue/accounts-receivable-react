@@ -12,7 +12,7 @@ export function Invoice() {
   if (!invoice) {
     return (
       <div className="Invoice">
-        <h3>Select an invoice</h3>
+        <h3>Invoice {id} not found.</h3>
       </div>
     );
   }
