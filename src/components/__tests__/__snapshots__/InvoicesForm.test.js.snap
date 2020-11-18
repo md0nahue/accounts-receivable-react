@@ -6,7 +6,7 @@ exports[`InvoicesForm Renders a form matching snapshot 1`] = `
     class="form-group"
   >
     <label>
-      Client: 
+      Client
     </label>
     <select
       class="form-control"
@@ -28,7 +28,7 @@ exports[`InvoicesForm Renders a form matching snapshot 1`] = `
     class="form-group"
   >
     <label>
-      Purchase Order Number: 
+      Purchase Order Number
     </label>
     <input
       name="ponumber"

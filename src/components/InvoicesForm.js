@@ -14,8 +14,7 @@ export function InvoicesForm() {
 
   return (
     <form onSubmit={onSubmitHandler}>
-      <div className="form-group">
-        <label>Client: </label>
+      <FormGroup label="Client">
         <select
           name="client"
           value={client}
@@ -25,19 +24,27 @@ export function InvoicesForm() {
           <option value="CircleCi">CircleCi</option>
           <option value="New Relic">New Relic</option>
         </select>
-      </div>
-      <div className="form-group">
-        <label>Purchase Order Number: </label>
+      </FormGroup>
+      <FormGroup label="Purchase Order Number">
         <input
           type="text"
           name="ponumber"
           value={poNumber}
           onChange={e => setPoNumber(e.target.value)}
         />
-      </div>
+      </FormGroup>
       <button type="submit" className="btn btn-primary">
         Save
       </button>
     </form>
+  );
+}
+
+function FormGroup({ label, children }) {
+  return (
+    <div className="form-group">
+      <label>{label}</label>
+      {children}
+    </div>
   );
 }
