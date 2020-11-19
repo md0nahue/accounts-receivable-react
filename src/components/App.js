@@ -1,12 +1,13 @@
 import React from "react";
-import "./App.css";
-import Header from "./Header";
-import Invoice from "./Invoice";
-import InvoicesForm from "./InvoicesForm";
-import InvoiceList from "./InvoiceList";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function App() {
+import "./App.css";
+import { Header } from "./Header";
+import { Invoice } from "./Invoice";
+import { InvoicesForm } from "./InvoicesForm";
+import { InvoiceList } from "./InvoiceList";
+
+export function App() {
   return (
     <Router>
       <div className="App container">
@@ -15,12 +16,15 @@ function App() {
           <InvoiceList />
         </div>
         <div className="main">
-          <Route path="/invoices/:id" component={Invoice} />
-          <Route path="/invoices/add" component={InvoicesForm} />
+          <Switch>
+            <Route path="/invoices/add" component={InvoicesForm} />
+            <Route path="/invoices/:id" component={Invoice} />
+            <Route exact path="/">
+              <h3>Select an invoice</h3>
+            </Route>
+          </Switch>
         </div>
       </div>
     </Router>
   );
 }
-
-export default App;

@@ -1,10 +1,10 @@
-import { ADD_INVOICE } from "./constants/types";
+import { types } from "./actions";
 
 const initialState = { invoices: [], activeInvoiceId: -1 };
 
 export default function todos(state = initialState, action) {
   switch (action.type) {
-    case ADD_INVOICE:
+    case types.ADD_INVOICE:
       return { ...state, invoices: [...state.invoices, action.payload] };
 
     default:

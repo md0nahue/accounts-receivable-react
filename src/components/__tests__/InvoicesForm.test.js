@@ -1,25 +1,25 @@
 import React from "react";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import { render, fireEvent, cleanup } from "@testing-library/react";
-import "jest-dom/extend-expect";
+import { MemoryRouter } from "react-router-dom";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
-import InvoicesForm from "../InvoicesForm";
+import { InvoicesForm } from "../InvoicesForm";
 
-const middlewares = [];
-const mockStore = configureStore(middlewares);
-
-beforeEach(cleanup);
+const mockStore = configureStore();
 
 function renderWithStore(store) {
   return render(
-    <Provider store={store}>
-      <InvoicesForm />
-    </Provider>
+    <MemoryRouter>
+      <Provider store={store}>
+        <InvoicesForm />
+      </Provider>
+    </MemoryRouter>
   );
 }
 
-describe("InvoicesForm Component", () => {
+describe("InvoicesForm", () => {
   it("Renders a form matching snapshot", () => {
     const store = mockStore({});
     const { container } = renderWithStore(store);
@@ -27,11 +27,22 @@ describe("InvoicesForm Component", () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('Dispatches action on "save" click', () => {
+  it('does not dispatch on "save" with form default values', () => {
     const store = mockStore({});
-    const { getByText } = renderWithStore(store);
+    renderWithStore(store);
 
-    fireEvent.click(getByText("Save"));
+    userEvent.click(screen.getByText("Save"));
+    const actions = store.getActions();
+
+    expect(actions.length).toEqual(0);
+  });
+
+  it('Dispatches action on "save" if client picked', () => {
+    const store = mockStore({});
+    renderWithStore(store);
+
+    userEvent.selectOptions(screen.getByLabelText("Client"), "CircleCi");
+    userEvent.click(screen.getByText("Save"));
     const actions = store.getActions();
 
     expect(actions.length).toEqual(1);

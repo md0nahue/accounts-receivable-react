@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InvoiceList Component Renders a list of provided invoices 1`] = `
+exports[`InvoiceList Renders a list of provided invoices 1`] = `
 <ul
   class="InvoiceList nav nav-pills flex-column"
 >
@@ -11,6 +11,9 @@ exports[`InvoiceList Component Renders a list of provided invoices 1`] = `
       class="nav-link"
       href="/invoices/1"
     >
+      #
+      1
+       
       Test Double 1
     </a>
   </li>
@@ -21,6 +24,9 @@ exports[`InvoiceList Component Renders a list of provided invoices 1`] = `
       class="nav-link"
       href="/invoices/2"
     >
+      #
+      2
+       
       Test Double 2
     </a>
   </li>
@@ -31,6 +37,9 @@ exports[`InvoiceList Component Renders a list of provided invoices 1`] = `
       class="nav-link"
       href="/invoices/3"
     >
+      #
+      3
+       
       Test Double 3
     </a>
   </li>

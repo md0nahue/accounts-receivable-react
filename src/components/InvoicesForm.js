@@ -1,57 +1,82 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { addInvoice } from "../actions";
 
-function InvoicesForm({ addInvoice }) {
+export function InvoicesForm() {
+  const history = useHistory();
   const [client, setClient] = useState("");
-  const [poNumber, setPoNumber] = useState("");
+  const [attn, setAttn] = useState("");
+  const [dueDate, setDueDate] = useState("");
+  const [notes, setNotes] = useState("");
+  const dispatch = useDispatch();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    addInvoice({ client, poNumber });
+    if (client) {
+      dispatch(addInvoice({ client, attn, notes, due_date: dueDate }));
+      history.push("/");
+    }
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <div className="form-group">
-        <label>Client: </label>
-        <select
-          name="client"
-          value={client}
-          onChange={(e) => setClient(e.target.value)}
-          className="form-control"
-        >
-          <option value="CircleCi">CircleCi</option>
-          <option value="New Relic">New Relic</option>
-        </select>
-      </div>
-      <div className="form-group">
-        <label>Purchase Order Number: </label>
-        <input
-          type="text"
-          name="ponumber"
-          value={poNumber}
-          onChange={(e) => setPoNumber(e.target.value)}
-        />
-      </div>
-      <button type="submit" className="btn btn-primary">
-        Save
-      </button>
-    </form>
+    <div className="container">
+      <form onSubmit={onSubmitHandler}>
+        <FormGroup label="Client" htmlFor="client-input">
+          <select
+            id="client-input"
+            name="client"
+            value={client}
+            onChange={(e) => setClient(e.target.value)}
+            className="form-control"
+          >
+            <option value="">--</option>
+            <option value="CircleCi">CircleCi</option>
+            <option value="New Relic">New Relic</option>
+          </select>
+        </FormGroup>
+        <FormGroup label="Attn" htmlFor="attn-input">
+          <input
+            id="attn-input"
+            type="text"
+            name="attn"
+            value={attn}
+            onChange={(e) => setAttn(e.target.value)}
+            className="form-control"
+          />
+        </FormGroup>
+        <FormGroup label="Due Date" htmlFor="duedate-input">
+          <input
+            input="duedate-input"
+            type="text"
+            name="duedate"
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+            className="form-control"
+          />
+        </FormGroup>
+        <FormGroup label="Notes" htmlFor="notes-input">
+          <textarea
+            id="notes-input"
+            name="notes"
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            className="form-control"
+          />
+        </FormGroup>
+        <button type="submit" className="btn btn-primary">
+          Save
+        </button>
+      </form>
+    </div>
   );
 }
 
-InvoicesForm.propTypes = {
-  addInvoice: PropTypes.func.isRequired,
-};
-
-function mapDispatchToProps(dispatch) {
-  return {
-    addInvoice: (invoice) => {
-      dispatch(addInvoice(invoice));
-    },
-  };
+function FormGroup({ label, htmlFor, children }) {
+  return (
+    <div className="form-group">
+      <label htmlFor={htmlFor}>{label}</label>
+      {children}
+    </div>
+  );
 }
-
-export default connect(null, mapDispatchToProps)(InvoicesForm);

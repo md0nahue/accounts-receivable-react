@@ -1,46 +1,92 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InvoicesForm Component Renders a form matching snapshot 1`] = `
-<form>
-  <div
-    class="form-group"
-  >
-    <label>
-      Client: 
-    </label>
-    <select
-      class="form-control"
-      name="client"
+exports[`InvoicesForm Renders a form matching snapshot 1`] = `
+<div
+  class="container"
+>
+  <form>
+    <div
+      class="form-group"
     >
-      <option
-        value="CircleCi"
+      <label
+        for="client-input"
       >
-        CircleCi
-      </option>
-      <option
-        value="New Relic"
+        Client
+      </label>
+      <select
+        class="form-control"
+        id="client-input"
+        name="client"
       >
-        New Relic
-      </option>
-    </select>
-  </div>
-  <div
-    class="form-group"
-  >
-    <label>
-      Purchase Order Number: 
-    </label>
-    <input
-      name="ponumber"
-      type="text"
-      value=""
-    />
-  </div>
-  <button
-    class="btn btn-primary"
-    type="submit"
-  >
-    Save
-  </button>
-</form>
+        <option
+          value=""
+        >
+          --
+        </option>
+        <option
+          value="CircleCi"
+        >
+          CircleCi
+        </option>
+        <option
+          value="New Relic"
+        >
+          New Relic
+        </option>
+      </select>
+    </div>
+    <div
+      class="form-group"
+    >
+      <label
+        for="attn-input"
+      >
+        Attn
+      </label>
+      <input
+        class="form-control"
+        id="attn-input"
+        name="attn"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form-group"
+    >
+      <label
+        for="duedate-input"
+      >
+        Due Date
+      </label>
+      <input
+        class="form-control"
+        input="duedate-input"
+        name="duedate"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="form-group"
+    >
+      <label
+        for="notes-input"
+      >
+        Notes
+      </label>
+      <textarea
+        class="form-control"
+        id="notes-input"
+        name="notes"
+      />
+    </div>
+    <button
+      class="btn btn-primary"
+      type="submit"
+    >
+      Save
+    </button>
+  </form>
+</div>
 `;
