@@ -27,7 +27,8 @@ than necessarily how far you get.
 
 Complete the following tasks as explained in their linked issues:
 
-1. Compute Invoice Discounts: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/2
+1. Compute Total: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/7
+2. Compute Invoice Discounts: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/2
 2. Add "Invoice Complete" radio button: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/4
 3. Incomplete Invoice count: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/5
 4. Change Invoice state: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/6
