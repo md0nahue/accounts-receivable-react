@@ -6,13 +6,14 @@ A totally, 100% realistic and non-contrived application for managing invoices.
 
 The following tools and libraries are used in the project:
 
-1. React v17
-1. Redux for state managment
-1. React Router for client-side routing
-1. Jest as the test runner
-1. React Testing Library for executing React Components
-1. ESLint for linting
-1. Prettier for auto-formatting
+1. [React](https://reactjs.org/) v17
+1. [Redux](https://redux.js.org/) for state managment
+1. [React Router](https://reactrouter.com/) for client-side routing
+1. [Jest](https://jestjs.io/) as the test runner
+1. [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for executing React Components
+1. [ESLint](https://eslint.org/) for linting
+1. [Prettier](https://prettier.io/) for auto-formatting
+1. [Bootstrap](https://getbootstrap.com/docs/3.4/css/) for styling
 
 ## Project Todos
 
@@ -29,9 +30,9 @@ Complete the following tasks as explained in their linked issues:
 
 1. Compute Total: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/7
 2. Compute Invoice Discounts: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/2
-2. Add "Invoice Complete" radio button: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/4
-3. Incomplete Invoice count: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/5
-4. Change Invoice state: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/6
+3. Add "Invoice Complete" radio button: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/4
+4. Incomplete Invoice count: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/5
+5. Change Invoice state: https://gitlab.com/testdouble/accounts-receivable-react/-/issues/6
 
 NOTE: If you receive alternative instructions from a Test Double Agent for this
 project, then stick to what they said.
