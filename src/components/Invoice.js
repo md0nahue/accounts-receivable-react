@@ -6,7 +6,7 @@ import { InvoiceSection } from "./InvoiceSection";
 export function Invoice() {
   const { id } = useParams();
   const invoice = useSelector(({ invoices }) =>
-    invoices.find(invoice => invoice.id === id)
+    invoices.find((invoice) => invoice.id === id)
   );
 
   if (!invoice) {
@@ -36,7 +36,7 @@ export function Invoice() {
       <InvoiceSection title="Projects" items={invoice.projects} />
       <br />
       <InvoiceSection title="Services" items={invoice.services} />
-      <div>
+      <div data-testid={`invoice-${invoice.id}-total`}>
         <strong>Total: </strong>
         $1,000,000
       </div>

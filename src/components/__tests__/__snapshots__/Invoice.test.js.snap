@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Invoice Renders an invoice matching url 'id' param 1`] = `
+<DocumentFragment>
+  <div
+    class="Invoice"
+  >
+    <h2>
+      Netflix Invoice
+    </h2>
+    <div>
+      <strong>
+        Attn: 
+      </strong>
+      Bo &lt;bo@circleci.com&gt;
+    </div>
+    <div>
+      <strong>
+        Due Date: 
+      </strong>
+      10/10/2020
+    </div>
+    <div>
+      <strong>
+        Notes: 
+      </strong>
+      Send monthly invoices.
+    </div>
+    <br />
+    InvoiceSection:{"title":"Projects","items":[{"name":"Anti-virus Software","description":"Subscription service for virus software.","discount_percent":null,"price_cents":20000,"quantity":1}]}
+    <br />
+    InvoiceSection:{"title":"Services","items":[{"name":"Software Development","description":"Deploy new environment.","discount_percent":null,"price_cents":15000,"quantity":1}]}
+    <div
+      data-testid="invoice-2-total"
+    >
+      <strong>
+        Total: 
+      </strong>
+      $1,000,000
+    </div>
+  </div>
+</DocumentFragment>
+`;
