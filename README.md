@@ -15,6 +15,13 @@ The following tools and libraries are used in the project:
 1. [Prettier](https://prettier.io/) for auto-formatting
 1. [Bootstrap](https://getbootstrap.com/docs/3.4/css/) for styling
 
+### JavaScript vs. TypeScript
+
+This application is written with JavaScript but is setup to also support
+TypeScript `.ts` and `.tsx` files if you choose to add them. You _may_ choose to
+write TypeScript if you would like to show off your static-type and generics
+skills.
+
 ## Project Todos
 
 To be conscientious of your valuable time, please limit yourself to 3
