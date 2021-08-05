@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InvoiceSection renders a matching snapshot 1`] = `
+<DocumentFragment>
+  <h5>
+    Line Items Section
+  </h5>
+  <table
+    class="table"
+  >
+    <thead>
+      <tr>
+        <th
+          scope="col"
+        >
+          Name
+        </th>
+        <th
+          scope="col"
+        >
+          Description
+        </th>
+        <th
+          scope="col"
+        >
+          Unit Price
+        </th>
+        <th
+          scope="col"
+        >
+          Quantity
+        </th>
+        <th
+          scope="col"
+        >
+          Subtotal
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Job Many
+        </td>
+        <td>
+          decribe many
+        </td>
+        <td>
+          $100
+        </td>
+        <td>
+          10
+        </td>
+        <td>
+          $1000
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Job Few
+        </td>
+        <td>
+          describe few
+        </td>
+        <td>
+          $100
+        </td>
+        <td>
+          1
+        </td>
+        <td>
+          $100
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Job None
+        </td>
+        <td>
+          describe none
+        </td>
+        <td>
+          $100
+        </td>
+        <td>
+          0
+        </td>
+        <td>
+          $0
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

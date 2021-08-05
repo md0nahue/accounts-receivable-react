@@ -1,7 +1,7 @@
 import React from "react";
 
 export function InvoiceSection({ items, title }) {
-  if (!items) {
+  if (!items?.length) {
     return <p>This section is empty!</p>;
   }
 
