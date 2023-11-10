@@ -21,7 +21,7 @@ export function InvoicesForm() {
 
   return (
     <div className="container">
-      <form onSubmit={onSubmitHandler}>
+      <form aria-label="New Invoice" name="new-invoice" onSubmit={onSubmitHandler}>
         <FormGroup label="Client" htmlFor="client-input">
           <select
             id="client-input"
@@ -64,7 +64,7 @@ export function InvoicesForm() {
             className="form-control"
           />
         </FormGroup>
-        <button type="submit" className="btn btn-primary">
+        <button className="btn btn-primary">
           Save
         </button>
       </form>

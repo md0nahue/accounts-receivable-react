@@ -26,9 +26,9 @@ describe("Invoice", () => {
     const { asFragment } = render(
       <Provider store={store}>
         <MemoryRouter initialEntries={["/invoices/2"]}>
-          <Route path="/invoices/:id">
-            <Invoice />
-          </Route>
+					<Route path="/invoices/:id">
+						<Invoice />
+					</Route>
         </MemoryRouter>
       </Provider>
     );
@@ -44,9 +44,9 @@ describe("Invoice", () => {
     render(
       <Provider store={store}>
         <MemoryRouter initialEntries={["/1"]}>
-          <Route path="/:id">
-            <Invoice />
-          </Route>
+					<Route path="/:id">
+						<Invoice />
+					</Route>
         </MemoryRouter>
       </Provider>
     );
@@ -54,6 +54,6 @@ describe("Invoice", () => {
     const totalDiv = screen.queryByTestId(`invoice-1-total`);
 
     expect(totalDiv).toBeTruthy();
-    expect(totalDiv.lastChild.textContent).toEqual("$1,000,000");
+    expect(totalDiv.textContent).toEqual("Total: $1,000,000");
   });
 });

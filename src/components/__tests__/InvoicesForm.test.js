@@ -2,7 +2,7 @@ import React from "react";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { InvoicesForm } from "../InvoicesForm";
@@ -24,7 +24,7 @@ describe("InvoicesForm", () => {
     const store = mockStore({});
     const { container } = renderWithStore(store);
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('does not dispatch on "save" with form default values', () => {
@@ -37,14 +37,16 @@ describe("InvoicesForm", () => {
     expect(actions.length).toEqual(0);
   });
 
-  it('Dispatches action on "save" if client picked', () => {
+  it('Dispatches action on submit if client picked', async () => {
     const store = mockStore({});
     renderWithStore(store);
 
-    userEvent.selectOptions(screen.getByLabelText("Client"), "CircleCi");
-    userEvent.click(screen.getByText("Save"));
-    const actions = store.getActions();
+    await userEvent.selectOptions(screen.getByLabelText("Client"), "CircleCi");
 
+		const form = screen.getByRole("form");
+		fireEvent.submit(form);
+
+    const actions = store.getActions();
     expect(actions.length).toEqual(1);
     expect(actions[0].type).toEqual("ADD_INVOICE");
   });
