@@ -4,9 +4,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 A totally, 100% realistic and non-contrived application for managing invoices.
 
+The project is configured to use Node 20. The `.node-version` file can be
+used to install the correct version with [`nodenv`](https://github.com/nodenv/nodenv).
+
 The following tools and libraries are used in the project:
 
-1. [React](https://reactjs.org/) v17
+1. [React](https://reactjs.org/) v18
 1. [Redux](https://redux.js.org/) for state managment
 1. [React Router](https://reactrouter.com/) for client-side routing
 1. [Jest](https://jestjs.io/) as the test runner

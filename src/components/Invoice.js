@@ -6,7 +6,7 @@ import { InvoiceSection } from "./InvoiceSection";
 export function Invoice() {
   const { id } = useParams();
   const invoice = useSelector(({ invoices }) =>
-    invoices.find((invoice) => invoice.id === id)
+    invoices.find((invoice) => invoice.id === id),
   );
 
   if (!invoice) {

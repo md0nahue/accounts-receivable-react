@@ -30,7 +30,7 @@ describe("Invoice", () => {
             <Invoice />
           </Route>
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -48,12 +48,12 @@ describe("Invoice", () => {
             <Invoice />
           </Route>
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     const totalDiv = screen.queryByTestId(`invoice-1-total`);
 
     expect(totalDiv).toBeTruthy();
-    expect(totalDiv.lastChild.textContent).toEqual("$1,000,000");
+    expect(totalDiv.textContent).toEqual("Total: $1,000,000");
   });
 });
