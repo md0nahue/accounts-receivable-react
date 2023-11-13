@@ -2,7 +2,7 @@ import React from "react";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
-import { render, screen, fireEvent} from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { InvoicesForm } from "../InvoicesForm";
@@ -15,7 +15,7 @@ function renderWithStore(store) {
       <Provider store={store}>
         <InvoicesForm />
       </Provider>
-    </MemoryRouter>
+    </MemoryRouter>,
   );
 }
 
@@ -37,14 +37,14 @@ describe("InvoicesForm", () => {
     expect(actions.length).toEqual(0);
   });
 
-  it('Dispatches action on submit if client picked', async () => {
+  it("Dispatches action on submit if client picked", async () => {
     const store = mockStore({});
     renderWithStore(store);
 
     await userEvent.selectOptions(screen.getByLabelText("Client"), "CircleCi");
 
-		const form = screen.getByRole("form");
-		fireEvent.submit(form);
+    const form = screen.getByRole("form");
+    fireEvent.submit(form);
 
     const actions = store.getActions();
     expect(actions.length).toEqual(1);

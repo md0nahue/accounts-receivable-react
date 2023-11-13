@@ -66,7 +66,7 @@ describe("InvoiceSection", () => {
     ];
 
     const { asFragment } = render(
-      <InvoiceSection items={lineItems} title="Line Items Section" />
+      <InvoiceSection items={lineItems} title="Line Items Section" />,
     );
 
     expect(asFragment()).toMatchSnapshot();

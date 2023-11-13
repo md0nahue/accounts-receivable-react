@@ -26,11 +26,11 @@ describe("Invoice", () => {
     const { asFragment } = render(
       <Provider store={store}>
         <MemoryRouter initialEntries={["/invoices/2"]}>
-					<Route path="/invoices/:id">
-						<Invoice />
-					</Route>
+          <Route path="/invoices/:id">
+            <Invoice />
+          </Route>
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -44,11 +44,11 @@ describe("Invoice", () => {
     render(
       <Provider store={store}>
         <MemoryRouter initialEntries={["/1"]}>
-					<Route path="/:id">
-						<Invoice />
-					</Route>
+          <Route path="/:id">
+            <Invoice />
+          </Route>
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     const totalDiv = screen.queryByTestId(`invoice-1-total`);
