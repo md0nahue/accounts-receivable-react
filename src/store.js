@@ -12,6 +12,7 @@ store.dispatch(
   addInvoice({
     id: "1",
     client: "CircleCi",
+    completed: false,
     attn: "Bo <bo@circleci.com>",
     due_date: "10/10/2020",
     notes: "Send monthly invoices.",
@@ -61,6 +62,7 @@ store.dispatch(
   addInvoice({
     id: "2",
     client: "New Relic",
+    completed: false,
     attn: "Matan <Matan@new-relic.com>",
     due_date: "10/20/2020",
     notes: "Send weekly invoices.",

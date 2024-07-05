@@ -38,6 +38,13 @@ exports[`Invoice Renders an invoice matching url 'id' param 1`] = `
       </strong>
       $1,000,000
     </div>
+    <div>
+      <button
+        class="button complete"
+      >
+        Mark as complete
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;
