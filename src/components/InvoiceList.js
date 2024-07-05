@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export function InvoiceList() {
   const invoices = useSelector((state) => state.invoices);
+  const incompleteCount = invoices.filter(invoice => !invoice.completed).length;
 
   return (
     <ul className="InvoiceList nav nav-pills flex-column">
@@ -14,6 +15,13 @@ export function InvoiceList() {
           </NavLink>
         </li>
       ))}
+        <li
+          className="nav-item"
+          key='incomplete-invoice-count'>
+          <span className="blue-circle">{incompleteCount}</span>
+            Incomplete
+        </li>
+
     </ul>
   );
 }
