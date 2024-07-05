@@ -27,16 +27,16 @@ exports[`Invoice Renders an invoice matching url 'id' param 1`] = `
       Send monthly invoices.
     </div>
     <br />
-    InvoiceSection:{"title":"Projects","items":[{"name":"Anti-virus Software","description":"Subscription service for virus software.","discount_percent":null,"price_cents":20000,"quantity":1}]}
+    InvoiceSection:{"title":"Projects","items":[{"name":"Anti-virus Software","description":"Subscription service for virus software.","discount_percent":null,"price_cents":20000,"quantity":1,"row_total_no_discount":200,"row_total":200}]}
     <br />
-    InvoiceSection:{"title":"Services","items":[{"name":"Software Development","description":"Deploy new environment.","discount_percent":null,"price_cents":15000,"quantity":1}]}
+    InvoiceSection:{"title":"Services","items":[{"name":"Software Development","description":"Deploy new environment.","discount_percent":null,"price_cents":15000,"quantity":1,"row_total_no_discount":150,"row_total":150}]}
     <div
       data-testid="invoice-2-total"
     >
       <strong>
         Total: 
       </strong>
-      $1,000,000
+      $350
     </div>
   </div>
 </DocumentFragment>

@@ -33,6 +33,11 @@ exports[`InvoiceSection renders a matching snapshot 1`] = `
         <th
           scope="col"
         >
+          Discount
+        </th>
+        <th
+          scope="col"
+        >
           Subtotal
         </th>
       </tr>
@@ -52,7 +57,15 @@ exports[`InvoiceSection renders a matching snapshot 1`] = `
           10
         </td>
         <td>
-          $1000
+          10%
+        </td>
+        <td>
+          <span
+            class="strikethrough"
+          >
+            $undefined
+          </span>
+           $undefined
         </td>
       </tr>
       <tr>
@@ -68,8 +81,9 @@ exports[`InvoiceSection renders a matching snapshot 1`] = `
         <td>
           1
         </td>
+        <td />
         <td>
-          $100
+          $undefined
         </td>
       </tr>
       <tr>
@@ -85,8 +99,9 @@ exports[`InvoiceSection renders a matching snapshot 1`] = `
         <td>
           0
         </td>
+        <td />
         <td>
-          $0
+          $undefined
         </td>
       </tr>
     </tbody>
