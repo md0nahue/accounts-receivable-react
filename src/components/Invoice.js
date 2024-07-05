@@ -2,10 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { InvoiceSection } from "./InvoiceSection";
+import { calculateTotals } from "../utils/invoiceHelpers";
 
 export function Invoice() {
   const { id } = useParams();
-  const invoice = useSelector(({ invoices }) =>
+  let invoice = useSelector(({ invoices }) =>
     invoices.find((invoice) => invoice.id === id),
   );
 
@@ -17,6 +18,7 @@ export function Invoice() {
     );
   }
 
+  invoice = calculateTotals(invoice)
   return (
     <div className="Invoice">
       <h2>{invoice.client} Invoice</h2>
@@ -38,7 +40,7 @@ export function Invoice() {
       <InvoiceSection title="Services" items={invoice.services} />
       <div data-testid={`invoice-${invoice.id}-total`}>
         <strong>Total: </strong>
-        $1,000,000
+        ${invoice.total_dollars}
       </div>
     </div>
   );
