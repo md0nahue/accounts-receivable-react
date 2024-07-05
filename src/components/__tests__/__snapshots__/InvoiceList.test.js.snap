@@ -43,5 +43,15 @@ exports[`InvoiceList Renders a list of provided invoices 1`] = `
       Test Double 3
     </a>
   </li>
+  <li
+    class="nav-item"
+  >
+    <span
+      class="blue-circle"
+    >
+      2
+    </span>
+    Incomplete
+  </li>
 </ul>
 `;
