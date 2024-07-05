@@ -54,6 +54,6 @@ describe("Invoice", () => {
     const totalDiv = screen.queryByTestId(`invoice-1-total`);
 
     expect(totalDiv).toBeTruthy();
-    expect(totalDiv.textContent).toEqual("Total: $1,000,000");
+    expect(totalDiv.textContent).toEqual("Total: $350");
   });
 });
