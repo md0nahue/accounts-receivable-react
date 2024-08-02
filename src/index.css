@@ -46,6 +46,7 @@ code {
   justify-content: center;
   margin-right: 10px;
   font-size: 16px;
+}
 
 .strikethrough {
   text-decoration: line-through;
