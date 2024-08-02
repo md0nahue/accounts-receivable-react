@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px; /* Add margin to create space above the buttons */
+}
+
+.incomplete {
+  background-color: #e74c3c; /* Red color */
+}
+
+.complete {
+  background-color: #3498db; /* Blue color */
+}
+
+.button:focus {
+  outline: none;
+}
+
+.blue-circle {
+  margin: 5px;
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(2,123,255);
+  color: white;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
